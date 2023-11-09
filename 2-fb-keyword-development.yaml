@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegram-crawler-app
+  namespace: crawler-apps
+spec:
+  replicas: 3 # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: telegram-crawler-app
+  template:
+    metadata:
+      labels:
+        app: telegram-crawler-app
+    spec:
+      containers:
+      - name: telegram-crawler-app
+        image: mglue/telegram-crawler-app:1.1
+        ports:
+        - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: telegram-crawler-app-service
+spec:
+  selector:
+    app: telegram-crawler-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer # Use "LoadBalancer" or "NodePort" as per your setup

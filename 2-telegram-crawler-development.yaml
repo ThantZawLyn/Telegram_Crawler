@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: telegram-crawler-app
-        image: mglue/telegram-crawler-app:1.1
+        image: mglue/telegram-crawler-app:v-2.1
         ports:
         - containerPort: 8080
 

@@ -19,10 +19,10 @@ jobs:
       run: docker login -u ${{ secrets.mglue }} -p ${{ secrets.dckr_pat_uMEJDaFijR24OzXMdTcFqBwELk4 }}
     
     - name: Build the Docker image
-      run: docker build -t telegram-crawler-app:1.1 -f Dockerfile.app .
+      run: docker build -t telegram-crawler-app:v-2.1 -f Dockerfile.app .
 
     - name: Tag the Docker image
-      run: docker tag telegram-crawler-app:1.1 mglue/telegram-crawler-app:1.1
+      run: docker tag telegram-crawler-app:v-2.1 mglue/telegram-crawler-app:v-2.1
 
     - name: Push to Docker Hub
-      run: docker push mglue/telegram-crawler-app:1.1
+      run: docker push mglue/telegram-crawler-app:v-2.1

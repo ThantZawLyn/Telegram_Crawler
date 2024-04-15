@@ -4,7 +4,7 @@ metadata:
   name: telegram-crawler-app
   namespace: crawler-apps
 spec:
-  replicas: 3 # Adjust the number of replicas as needed
+  replicas: 1 # Adjust the number of replicas as needed
   selector:
     matchLabels:
       app: telegram-crawler-app

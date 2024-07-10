@@ -3,6 +3,6 @@ psycopg2==2.8.6
 psycopg2-binary
 sqlalchemy==1.4.32
 pandas==1.5.3
-tqdm==4.64.1
+tqdm==4.66.3
 Telethon==1.26.1
 
